@@ -1,0 +1,4 @@
+settings:
+  block_interval: 60
+  welcome_message: "Welcome to the server!"
+  random_block_message: "{player} received a {block}!"

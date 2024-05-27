@@ -1,0 +1,22 @@
+name: oneblock
+version: '1.0-SNAPSHOT'
+main: me.banker.oneblock.Oneblock
+api-version: '1.20'
+
+commands:
+  startblocks:
+    description: "Start the random block distribution."
+    usage: "/startblocks"
+    permission: "oneblock.admin"
+  stopblocks:
+    description: "Stop the random block distribution."
+    usage: "/stopblocks"
+    permission: "oneblock.admin"
+
+permissions:
+  oneblock.admin:
+    description: "Allows the player to start and stop the block distribution."
+    default: op
+  oneblock.receive:
+    description: "Allows the player to receive random blocks every interval."
+    default: true

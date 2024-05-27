@@ -1,0 +1,13 @@
+name: OneBlockPlugin
+main: me.banker.oneblock.Oneblock
+version: 1.0
+api-version: 1.16
+commands:
+  startblocks:
+    description: Start the random block distribution.
+  stopblocks:
+    description: Stop the random block distribution.
+permissions:
+  oneblock.receive:
+    description: Allows the player to receive random blocks.
+    default: true
