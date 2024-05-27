@@ -53,5 +53,3 @@ settings:
 
 This project is licensed under the MIT License.
 ```
-
-This streamlined `README.md` covers the essential information needed to understand, install, configure, and use the plugin.
