@@ -13,7 +13,7 @@ import org.bukkit.scheduler.BukkitRunnable
 
 class JoinListener(private val plugin: Oneblock) : Listener {
     private val playerBars: MutableMap<UUID, BossBar> = mutableMapOf()
-    private val colors = BarColor.values()
+    private val colors = BarColor.entries.toTypedArray()
     private var colorIndex = 0
 
     @EventHandler

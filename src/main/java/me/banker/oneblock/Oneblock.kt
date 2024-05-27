@@ -4,8 +4,9 @@ import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.command.Command
 import org.bukkit.command.CommandSender
+import org.bukkit.entity.Player
 import org.bukkit.plugin.java.JavaPlugin
-import java.util.*
+import java.util.Random
 
 class Oneblock : JavaPlugin() {
     private lateinit var joinListener: JoinListener
@@ -65,20 +66,20 @@ class Oneblock : JavaPlugin() {
         taskRunning = false
     }
 
-    private fun giveRandomBlock(player: org.bukkit.entity.Player) {
+    private fun giveRandomBlock(player: Player) {
         val blocks = Material.entries.filter { it.isBlock }
         val randomBlock = blocks[Random().nextInt(blocks.size)]
         player.inventory.addItem(org.bukkit.inventory.ItemStack(randomBlock, 1))
         val randomBlockMessage = (config.getString("settings.random_block_message", "{player} received a {block}!")
             ?: "{player} received a {block}!")
             .replace("{player}", player.name)
-            .replace("{block}", randomBlock.name.toLowerCase().replace('_', ' '))
+            .replace("{block}", randomBlock.name.lowercase().replace('_', ' '))
         Bukkit.getServer().onlinePlayers.forEach {
             it.sendMessage(randomBlockMessage)
         }
     }
 
-    private fun updatePlayerBar(player: org.bukkit.entity.Player) {
+    private fun updatePlayerBar(player: Player) {
         val bar = joinListener.getPlayerBar(player)
         if (bar != null) {
             val interval = config.getInt("settings.block_interval", 60)
