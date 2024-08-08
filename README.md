@@ -1,6 +1,6 @@
 
 
-# OneBlockPlugin (1.16.4)
+# OneBlockPlugin (1.20+)
 
 A Minecraft plugin that adds a random block distribution system.
 
